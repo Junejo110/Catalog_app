@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:onlineshop_app/Home_page.dart';
 
 void main() {
   runApp(Myapp());
 }
 
 class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Material(
-        child: Center(
-          child: Container(
-            child: Text("Adnan_ Ali_ junejo"),
-          ),
-        ),
-      ),
-    );
+    return MaterialApp(home: Homepage());
   }
 }
