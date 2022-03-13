@@ -19,11 +19,13 @@ class Mydrawer extends StatelessWidget {
                   "Adnan_Ali",
                   style: TextStyle(
                     color: Colors.black,
+                    fontSize: 18,
                   ),
                 ),
                 accountEmail: Text("Adnan@gmail.com",
                     style: TextStyle(
                       color: Colors.black,
+                      fontSize: 17,
                     )),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: AssetImage("assets/images/Adnan.png"),
