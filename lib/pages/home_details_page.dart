@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlineshop_app/pages/Home_widgets.dart/add_to_cart.dart';
 // import 'package:flutter_catalog/models/catalog.dart';
 // import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -26,17 +27,9 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                    MyTheme.darkBluishColor,
-                  ),
-                  shape: MaterialStateProperty.all(
-                    const StadiumBorder(),
-                  )),
-              child: "Buy".text.make(),
-            ).wh(100, 50)
+            AddtoCart(
+              catalog: catalog,
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
@@ -62,8 +55,13 @@ class HomeDetailPage extends StatelessWidget {
                         .color(MyTheme.darkBluishColor)
                         .bold
                         .make(),
-                    catalog.desc.text.xl.make(),
+                    catalog.desc.text.color(Colors.blueGrey).make(),
                     10.heightBox,
+                    " five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                        .text
+                        .color(Colors.blueGrey)
+                        .make()
+                        .p16(),
                   ],
                 ).py64(),
               ),

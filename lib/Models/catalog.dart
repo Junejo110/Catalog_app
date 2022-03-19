@@ -1,16 +1,30 @@
 import 'dart:convert';
 
 class CatalogModel {
+  static final catModel = CatalogModel._internal();
+
+  CatalogModel._internal();
+
+  factory CatalogModel() => catModel;
+
   static var items;
+
+  // Get Item by ID
+  Item getById(int id) =>
+      // ignore: null_closures
+      items.firstWhere((element) => element.id == id, orElse: null);
+
+  // Get Item by position
+  Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
-  final int id;
-  final String name;
-  final String desc;
-  final num price;
-  final String color;
-  final String image;
+  late int id;
+  late String name;
+  late String desc;
+  late num price;
+  late String color;
+  late String image;
 
   Item({
     required this.id,
@@ -51,7 +65,8 @@ class Item {
   }
 
   factory Item.fromMap(Map<String, dynamic> map) {
-    if (map == null) ;
+    // ignore: unnecessary_null_comparison
+    if (map == null) {}
 
     return Item(
       id: map['id'],

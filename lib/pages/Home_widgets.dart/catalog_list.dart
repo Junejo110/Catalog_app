@@ -3,6 +3,7 @@ import 'package:onlineshop_app/pages/home_details_page.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../../Models/catalog.dart';
 import '../../utils/widgets/themes.dart';
+import 'add_to_cart.dart';
 import 'catalog_image.dart';
 
 class CatalogList extends StatelessWidget {
@@ -53,24 +54,14 @@ class CatalogItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               catalog.name.text.lg.color(MyTheme.darkBluishColor).bold.make(),
-              catalog.desc.text.make(),
+              catalog.desc.text.color(Colors.blueGrey).make(),
               10.heightBox,
               ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalog.price}".text.bold.xl.make(),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          MyTheme.darkBluishColor,
-                        ),
-                        shape: MaterialStateProperty.all(
-                          const StadiumBorder(),
-                        )),
-                    child: "Buy".text.make(),
-                  )
+                  AddtoCart(catalog: catalog)
                 ],
               ).pOnly(right: 8.0)
             ],
