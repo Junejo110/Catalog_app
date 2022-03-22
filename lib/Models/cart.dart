@@ -10,7 +10,6 @@ class CartModel {
   late CatalogModel _catalog;
 
   ////collection Of  IDs,  Store ID of each Item////
-
   final List<int> _itemIds = [];
 
   /// get catalog
@@ -20,8 +19,8 @@ class CartModel {
     assert(newCatalog != null);
     _catalog = newCatalog;
   }
-/////get items in the cart
 
+/////get items in the cart
   List<Item> get items => _itemIds.map((id) => _catalog.getById(id)).toList();
 
   //// get total price

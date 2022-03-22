@@ -9,9 +9,10 @@ import 'package:onlineshop_app/utils/widgets/themes.dart';
 import '../Models/catalog.dart';
 import 'Home_widgets.dart/catalog_header.dart';
 import 'Home_widgets.dart/catalog_list.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -49,7 +50,12 @@ class _HomePageState extends State<HomePage> {
             Navigator.pushNamed(context, MyRoutes.cartRoute);
           },
           backgroundColor: MyTheme.darkBluishColor,
-          child: Icon(CupertinoIcons.cart),
+          child: Icon(
+            CupertinoIcons.cart,
+          ),
+        ).badge(
+          color: Vx.red500,
+          size: 15,
         ),
         body: SafeArea(
           child: Container(

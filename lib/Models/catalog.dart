@@ -1,12 +1,6 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static final catModel = CatalogModel._internal();
-
-  CatalogModel._internal();
-
-  factory CatalogModel() => catModel;
-
   static var items;
 
   // Get Item by ID
@@ -16,6 +10,8 @@ class CatalogModel {
 
   // Get Item by position
   Item getByPosition(int pos) => items[pos];
+
+  toMap() {}
 }
 
 class Item {
